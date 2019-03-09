@@ -1758,7 +1758,9 @@ class PdfFileReader(object):
         line = b_('')
         while line[:5] != b_("%%EOF"):
             if stream.tell() < last1M:
-                raise utils.PdfReadError("EOF marker not found")
+                # raise utils.PdfReadError("EOF marker not found")
+                print("EOF marker not found")
+                pass
             line = self.readNextEndLine(stream)
             if debug: print("  line:",line)
 
